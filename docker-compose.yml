@@ -1,0 +1,12 @@
+version: "3"
+ 
+services:
+  server:
+    build: ./api
+    tty: true 
+    ports:
+      - "50051:50051"
+    container_name: api
+    command: bash -c "go run api/main.go"
+    volumes:
+      - ./api:/go/src/github.com/seigi0714/flutter-go-chat-sample/api
